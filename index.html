@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	
+	<!-- start nav ber -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-0">
+ 		<div class="container">
+ 			 <a class="navbar-brand" href="#">Bolgen</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">Dashboard <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="posts.html">Posts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="categories.html">Categories</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="posts.html">Users</a>
+      </li>
+    </ul>
+   <ul class="navbar-nav ml-auto">
+   	<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user"></i> Welcome, Azad
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="profile"><i class="fas fa-address-card"></i> Profile</a>
+          <a class="dropdown-item" href="#"><i class="fas fa-user-cog"></i> Setting</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </li>
+   </ul>
+  </div>
+ 	</div>
+	</nav>
+
+
+	<!-- End Nav ber -->
+
+	<!-- start header -->
+<header class="bg-primary text-white py-2" >
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				 <h1><i class="fas fa-cog "></i> DashBoard</h1>
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+	</div>
+</header>
+ <!-- End header -->
+
+ <section class="py-4">
+ 	<div class="container ">
+ 		<div class="row">
+ 			<div class="col-md-3">
+ 				<a href="" class="btn btn-primary btn-block" data-toggle='modal' data-target="#addPostModal"><i class="fas fa-plus"></i> Add Post</a>
+ 			</div>
+ 			<div class="col-md-3">
+ 				<a href="" class="btn btn-success btn-block" data-toggle='modal' data-target="#addCatModal"><i class="fas fa-plus"></i> Add Category</a>
+ 			</div>
+ 			<div class="col-md-3">
+ 				<a href="" class="btn btn-warning btn-block" data-toggle='modal' data-target="#addUserModal"><i class="fas fa-plus"></i> Add User</a>
+ 			</div>
+ 		</div>
+ 	</div>
+ </section>
+
+	<!-- Start Post Modal -->
+<div class="modal fade" id="addPostModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="exampleModalLabel">Add Post</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="title" class="col-form-label">Title</label>
+            <input type="text" class="form-control" id="title">
+          </div>
+          <div class="form-group">
+          	<label for="category" class="col-form-label">Category</label>
+          	<select class="form-control">
+			  <option>select one</option>
+			  <option>PHP</option>
+			  <option>Laravel</option>
+			  <option>Javascript</option>
+			</select>
+          </div>
+          <div class="form-group">
+             <label for="image" >Image</label>
+
+            <div class="custom-file">
+		    <input type="file" class="custom-file-input" id="image">
+		    <label for="image" class="custom-file-label" >Choose file</label>
+		  </div>
+		  <small class="form-text text-muted">max Size 3mb</small>
+          </div>
+
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="editor1"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+	<!-- End Post Modal -->
+
+	<!-- Start Post Modal -->
+
+<div class="modal fade" id="addCatModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="exampleModalLabel">Add Category</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="cat" class="col-form-label">Category</label>
+            <input type="text" class="form-control" id="cat">
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+	<!-- Start Main Content -->
+
+	<section id="main-content">
+		<div class="container">
+			<div class="row">
+				
+				<!-- Start Latest Post -->
+				<div class="col-md-9">
+					<div class="card">
+						<div class="card-header">
+							<h4>Latest Posts</h4>
+						</div>
+					</div>
+					<table class="table table-striped ">
+						<thead class="thead-dark">
+							<tr>
+								<th>#</th>
+								<th>Title</th>
+								<th>Category</th>
+								<th>Date</th>
+								<th>Details</th>
+							</tr>
+						</thead>
+						<tbody >
+							<tr>
+								<td>1</td>
+								<td>Post One</td>
+								<td>PHP</td>
+								<td>10 March 2020</td>
+								<td><a href="details.html" class="btn btn-secondary">Details</a></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>Post Two</td>
+								<td>Laravel</td>
+								<td>10 March 2020</td>
+								<td><a href="details.html" class="btn btn-secondary">Details</a></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>Post Three</td>
+								<td>Java</td>
+								<td>10 March 2020</td>
+								<td><a href="details.html" class="btn btn-secondary">Details</a></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>Post Two</td>
+								<td>Laravel</td>
+								<td>10 March 2020</td>
+								<td><a href="details.html" class="btn btn-secondary">Details</a></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>Post Two</td>
+								<td>Laravel</td>
+								<td>10 March 2020</td>
+								<td><a href="details.html" class="btn btn-secondary">Details</a></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>Post Two</td>
+								<td>Laravel</td>
+								<td>10 March 2020</td>
+								<td><a href="details.html" class="btn btn-secondary">Details</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<!-- End Latest Post -->
+				
+				<!-- Start Right sideber -->
+				
+				<div class="col-md-3">
+					<div class="card text-center bg-primary text-white mb-3">
+						<div class="card-body">
+							<h4>Posts</h4>
+							<h4 class="display-4">
+								<i class="fas fa-pencil-alt"></i> 6
+							</h4>
+							<a href="post.html" class="btn btn-outline-light btn-sm">View</a>
+
+						</div>
+					</div>
+					<div class="card text-center bg-success text-white mb-3">
+						<div class="card-body">
+							<h4>Categories</h4>
+							<h4 class="display-4">
+								<i class="far fa-folder"></i> 16
+							</h4>
+							<a href="post.html" class="btn btn-outline-light btn-sm">View</a>
+
+						</div>
+					</div>
+					<div class="card text-center bg-warning text-white mb-3">
+						<div class="card-body">
+							<h4>Users</h4>
+							<h4 class="display-4">
+								<i class="fas fa-users"></i> 26
+							</h4>
+							<a href="post.html" class="btn btn-outline-light btn-sm">View</a>
+
+						</div>
+					</div>
+				</div>
+
+					<!-- End Right sideber -->	
+			</div>
+		</div>		
+	</section>
+
+	<!-- End Main Content -->
+
+	<!-- Start Footer -->
+<footer class="bg-dark text-white mt-5 p-5">
+	
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="lead text-center">
+					CopyRight &copy; 2020
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</footer>
+
+	<!-- End Footer -->
+
+	<!-- Start User Modal -->
+
+<div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="exampleModalLabel">Add User</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="name" class="col-form-label">Name</label>
+            <input type="text" class="form-control" id="name">
+          </div>
+          <div class="form-group">
+            <label for="email" class="col-form-label">Email</label>
+            <input type="email" class="form-control" id="email">
+          </div>
+          <div class="form-group">
+            <label for="pass" class="col-form-label">Password</label>
+            <input type="password" class="form-control" id="pass">
+          </div>
+          <div class="form-group">
+            <label for="r-pass" class="col-form-label">R-Password</label>
+            <input type="password" class="form-control" id="r-pass">
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+	<!-- End User Modal -->
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<!-- Fontawesome Cdn -->
+	<script src="https://kit.fontawesome.com/844aa8b797.js" crossorigin="anonymous"></script>
+
+	<!-- cdn text editor -->
+<script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+	
+	<!-- script for text editor -->
+ <script>
+         CKEDITOR.replace( 'editor1' );
+ </script>
+</body>
+</html>
